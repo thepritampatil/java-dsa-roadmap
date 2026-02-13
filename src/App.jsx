@@ -356,13 +356,16 @@ function App() {
               <div className="bg-blue-600 p-2 rounded-xl text-white shadow-lg">
                 <Code2 size={28} />
               </div>
-              <span>Java DSA <span className="text-blue-600">Roadmap</span></span>
+              <span>
+                Java DSA <span className="text-blue-600">Roadmap</span>
+              </span>
               <div className="flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
                 <Save size={12} /> Auto-Saved
               </div>
             </h1>
             <p className="text-slate-500 font-medium max-w-lg">
-              Master Data Structures & Algorithms with our comprehensive curriculum
+              Master Data Structures & Algorithms with our comprehensive
+              curriculum
             </p>
           </div>
 
@@ -372,10 +375,13 @@ function App() {
                 <div className="p-1.5 bg-yellow-50 rounded-lg">
                   <Trophy className="text-yellow-500" size={18} />
                 </div>
-                <span className="text-sm font-bold text-slate-700">Mastery Score</span>
+                <span className="text-sm font-bold text-slate-700">
+                  Mastery Score
+                </span>
               </div>
               <span className="text-2xl font-black text-blue-600">
-                {Math.round(progress)}<span className="text-sm text-slate-400 font-bold">%</span>
+                {Math.round(progress)}
+                <span className="text-sm text-slate-400 font-bold">%</span>
               </span>
             </div>
             <div className="w-full bg-slate-100 rounded-full h-3.5 overflow-hidden">
@@ -385,8 +391,12 @@ function App() {
               />
             </div>
             <div className="flex justify-between mt-3 px-1">
-              <span className="text-[11px] font-bold text-slate-400">{completedItems.size} Mastered</span>
-              <span className="text-[11px] font-bold text-slate-400">{totalItemsCount} Total</span>
+              <span className="text-[11px] font-bold text-slate-400">
+                {completedItems.size} Mastered
+              </span>
+              <span className="text-[11px] font-bold text-slate-400">
+                {totalItemsCount} Total
+              </span>
             </div>
           </div>
         </div>
@@ -401,21 +411,29 @@ function App() {
                 className={`relative overflow-hidden group p-5 rounded-3xl border-2 transition-all duration-300 text-left ${
                   activeLevel === index
                     ? `border-${lvl.color}-500 bg-white shadow-xl`
-                    : 'border-transparent bg-white/60 hover:bg-white hover:border-slate-200 shadow-sm'
+                    : "border-transparent bg-white/60 hover:bg-white hover:border-slate-200 shadow-sm"
                 }`}
               >
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
-                    <div className={`text-[10px] font-bold px-2.5 py-1 rounded-full inline-block ${
-                      activeLevel === index ? `text-${lvl.color}-600 bg-${lvl.color}-50` : 'text-slate-400 bg-slate-100'
-                    }`}>
+                    <div
+                      className={`text-[10px] font-bold px-2.5 py-1 rounded-full inline-block ${
+                        activeLevel === index
+                          ? `text-${lvl.color}-600 bg-${lvl.color}-50`
+                          : "text-slate-400 bg-slate-100"
+                      }`}
+                    >
                       Level {index + 1}
                     </div>
-                    <h3 className={`text-base font-black leading-tight ${activeLevel === index ? 'text-slate-800' : 'text-slate-500'}`}>
-                      {lvl.level.split(': ')[1]}
+                    <h3
+                      className={`text-base font-black leading-tight ${activeLevel === index ? "text-slate-800" : "text-slate-500"}`}
+                    >
+                      {lvl.level.split(": ")[1]}
                     </h3>
                   </div>
-                  <Icon className={`w-5 h-5 ${activeLevel === index ? `text-${lvl.color}-600` : 'text-slate-300'}`} />
+                  <Icon
+                    className={`w-5 h-5 ${activeLevel === index ? `text-${lvl.color}-600` : "text-slate-300"}`}
+                  />
                 </div>
                 <p className="text-xs text-slate-400 mt-3">{lvl.description}</p>
               </button>
@@ -425,7 +443,10 @@ function App() {
 
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="relative flex-grow group">
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+            <Search
+              className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"
+              size={20}
+            />
             <input
               type="text"
               placeholder="Search concepts, algorithms, or patterns..."
@@ -436,16 +457,27 @@ function App() {
           </div>
 
           <div className="flex gap-2">
-            <button onClick={exportProgress} className="px-5 py-4 bg-green-600 text-white rounded-3xl font-bold flex items-center gap-2 hover:bg-green-700 transition-all shadow-lg">
+            <button
+              onClick={exportProgress}
+              className="px-5 py-4 bg-green-600 text-white rounded-3xl font-bold flex items-center gap-2 hover:bg-green-700 transition-all shadow-lg"
+            >
               <Download size={18} />
               <span className="hidden sm:inline">Export</span>
             </button>
             <label className="px-5 py-4 bg-blue-600 text-white rounded-3xl font-bold flex items-center gap-2 hover:bg-blue-700 transition-all cursor-pointer shadow-lg">
               <Upload size={18} />
               <span className="hidden sm:inline">Import</span>
-              <input type="file" accept=".json" onChange={importProgress} className="hidden" />
+              <input
+                type="file"
+                accept=".json"
+                onChange={importProgress}
+                className="hidden"
+              />
             </label>
-            <button onClick={resetProgress} className="px-5 py-4 bg-red-600 text-white rounded-3xl font-bold flex items-center gap-2 hover:bg-red-700 transition-all shadow-lg">
+            <button
+              onClick={resetProgress}
+              className="px-5 py-4 bg-red-600 text-white rounded-3xl font-bold flex items-center gap-2 hover:bg-red-700 transition-all shadow-lg"
+            >
               <RotateCcw size={18} />
               <span className="hidden sm:inline">Reset</span>
             </button>
@@ -453,124 +485,210 @@ function App() {
         </div>
 
         <div className="space-y-5">
-          {filteredChapters.length > 0 ? filteredChapters.map((chapter) => {
-            const items = chapter.subtopics.concat(chapter.patterns);
-            const done = items.filter(i => completedItems.has(`${chapter.title}-${i}`)).length;
-            const total = items.length;
-            const pct = Math.round((done / total) * 100);
+          {filteredChapters.length > 0 ? (
+            filteredChapters.map((chapter) => {
+              const items = chapter.subtopics.concat(chapter.patterns);
+              const done = items.filter((i) =>
+                completedItems.has(`${chapter.title}-${i}`),
+              ).length;
+              const total = items.length;
+              const pct = Math.round((done / total) * 100);
 
-            return (
-              <div key={chapter.title} className={`bg-white rounded-[2rem] border transition-all ${
-                expandedChapters[chapter.title] ? 'border-slate-300 shadow-xl' : 'border-slate-100 shadow-sm hover:shadow-md'
-              }`}>
-                <button onClick={() => toggleChapter(chapter.title)} className="w-full flex items-center justify-between p-6 md:p-7 hover:bg-slate-50/50 transition-colors text-left">
-                  <div className="flex items-center gap-5">
-                    <div className={`w-14 h-14 flex items-center justify-center rounded-2xl ${
-                      expandedChapters[chapter.title] ? `bg-${roadmapData[activeLevel].color}-500 text-white` : `bg-${roadmapData[activeLevel].color}-50 text-${roadmapData[activeLevel].color}-600`
-                    }`}>
-                      <BookOpen size={26} />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-extrabold text-slate-800">{chapter.title}</h4>
-                      <div className="flex items-center gap-4 mt-1.5">
-                        <div className="flex items-center gap-1.5 px-2 py-0.5 bg-slate-100 rounded-md text-[10px] font-bold text-slate-500">
-                          <Layout size={12} /> {chapter.subtopics.length} Topics
-                        </div>
-                        <div className="flex items-center gap-1.5 px-2 py-0.5 bg-blue-50 rounded-md text-[10px] font-bold text-blue-500">
-                          <Target size={12} /> {chapter.patterns.length} Patterns
-                        </div>
+              return (
+                <div
+                  key={chapter.title}
+                  className={`bg-white rounded-[2rem] border transition-all ${
+                    expandedChapters[chapter.title]
+                      ? "border-slate-300 shadow-xl"
+                      : "border-slate-100 shadow-sm hover:shadow-md"
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleChapter(chapter.title)}
+                    className="w-full flex items-center justify-between p-6 md:p-7 hover:bg-slate-50/50 transition-colors text-left"
+                  >
+                    <div className="flex items-center gap-5">
+                      <div
+                        className={`w-14 h-14 flex items-center justify-center rounded-2xl ${
+                          expandedChapters[chapter.title]
+                            ? `bg-${roadmapData[activeLevel].color}-500 text-white`
+                            : `bg-${roadmapData[activeLevel].color}-50 text-${roadmapData[activeLevel].color}-600`
+                        }`}
+                      >
+                        <BookOpen size={26} />
                       </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-6">
-                    <div className="hidden sm:flex flex-col items-end">
-                      <div className="text-[10px] font-black text-slate-400 mb-1">Progress</div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                          <div className={`h-full bg-${roadmapData[activeLevel].color}-500 transition-all`} style={{width: `${pct}%`}} />
-                        </div>
-                        <span className="text-xs font-black text-slate-600">{pct}%</span>
-                      </div>
-                    </div>
-                    <div className={`p-2 rounded-full bg-slate-50 transition-transform ${expandedChapters[chapter.title] ? 'rotate-180' : ''}`}>
-                      <ChevronDown className="text-slate-400" size={20} />
-                    </div>
-                  </div>
-                </button>
-
-                {expandedChapters[chapter.title] && (
-                  <div className="border-t border-slate-100 p-8 bg-slate-50/20">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                      <div className="space-y-5">
-                        <h5 className="text-[11px] font-black uppercase text-slate-400 flex items-center gap-2.5">
-                          <Layout size={14} /> Core Concepts
-                        </h5>
-                        <div className="grid gap-2.5">
-                          {chapter.subtopics.map((item) => {
-                            const isDone = completedItems.has(`${chapter.title}-${item}`);
-                            return (
-                              <div key={item} onClick={() => toggleItem(`${chapter.title}-${item}`)} className={`flex items-center gap-4 p-4 rounded-2xl border transition-all cursor-pointer group hover:translate-x-1 ${
-                                isDone ? 'bg-green-50/50 border-green-200 shadow-sm' : 'bg-white border-slate-100 hover:border-slate-300 hover:shadow-md'
-                              }`}>
-                                {isDone ? (
-                                  <div className="bg-green-500 rounded-full p-0.5">
-                                    <CheckCircle2 className="text-white" size={20} />
-                                  </div>
-                                ) : (
-                                  <Circle className="text-slate-200 group-hover:text-slate-400" size={24} />
-                                )}
-                                <span className={`text-sm font-semibold ${isDone ? 'text-green-800' : 'text-slate-600'}`}>{item}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      <div className="space-y-5">
-                        <h5 className="text-[11px] font-black uppercase text-blue-500 flex items-center gap-2.5">
-                          <Zap size={14} /> Problem Patterns
-                        </h5>
-                        <div className="grid gap-2.5">
-                          {chapter.patterns.map((item) => {
-                            const isDone = completedItems.has(`${chapter.title}-${item}`);
-                            return (
-                              <div key={item} onClick={() => toggleItem(`${chapter.title}-${item}`)} className={`flex items-center gap-4 p-4 rounded-2xl border transition-all cursor-pointer group hover:translate-x-1 ${
-                                isDone ? 'bg-blue-50 border-blue-200 shadow-sm' : 'bg-white border-slate-200 border-dashed hover:border-blue-400 hover:border-solid hover:shadow-md'
-                              }`}>
-                                <div className={`p-1.5 rounded-lg ${isDone ? 'bg-blue-500 text-white' : 'bg-slate-50 text-slate-300 group-hover:text-blue-400'}`}>
-                                  <Target size={18} />
-                                </div>
-                                <span className={`text-sm font-bold ${isDone ? 'text-blue-800' : 'text-slate-700'}`}>{item}</span>
-                                {isDone && <CheckCircle2 className="ml-auto text-blue-500" size={16} />}
-                              </div>
-                            );
-                          })}
-                        </div>
-
-                        <div className="mt-8 p-6 bg-slate-900 rounded-3xl text-white relative overflow-hidden">
-                          <h6 className="text-xs font-black uppercase text-blue-400 mb-2">Practice Resources</h6>
-                          <p className="text-sm text-slate-300 mb-4">Practice {chapter.title} with curated problem sets</p>
-                          <div className="flex flex-wrap gap-2">
-                            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[10px] font-bold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors border border-white/5">
-                              <ExternalLink size={10} /> LeetCode
-                            </a>
-                            <a href="https://www.geeksforgeeks.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[10px] font-bold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors border border-white/5">
-                              <ExternalLink size={10} /> GFG
-                            </a>
+                      <div>
+                        <h4 className="text-xl font-extrabold text-slate-800">
+                          {chapter.title}
+                        </h4>
+                        <div className="flex items-center gap-4 mt-1.5">
+                          <div className="flex items-center gap-1.5 px-2 py-0.5 bg-slate-100 rounded-md text-[10px] font-bold text-slate-500">
+                            <Layout size={12} /> {chapter.subtopics.length}{" "}
+                            Topics
+                          </div>
+                          <div className="flex items-center gap-1.5 px-2 py-0.5 bg-blue-50 rounded-md text-[10px] font-bold text-blue-500">
+                            <Target size={12} /> {chapter.patterns.length}{" "}
+                            Patterns
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            );
-          }) : (
+                    <div className="flex items-center gap-6">
+                      <div className="hidden sm:flex flex-col items-end">
+                        <div className="text-[10px] font-black text-slate-400 mb-1">
+                          Progress
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div
+                              className={`h-full bg-${roadmapData[activeLevel].color}-500 transition-all`}
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                          <span className="text-xs font-black text-slate-600">
+                            {pct}%
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        className={`p-2 rounded-full bg-slate-50 transition-transform ${expandedChapters[chapter.title] ? "rotate-180" : ""}`}
+                      >
+                        <ChevronDown className="text-slate-400" size={20} />
+                      </div>
+                    </div>
+                  </button>
+
+                  {expandedChapters[chapter.title] && (
+                    <div className="border-t border-slate-100 p-8 bg-slate-50/20">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div className="space-y-5">
+                          <h5 className="text-[11px] font-black uppercase text-slate-400 flex items-center gap-2.5">
+                            <Layout size={14} /> Core Concepts
+                          </h5>
+                          <div className="grid gap-2.5">
+                            {chapter.subtopics.map((item) => {
+                              const isDone = completedItems.has(
+                                `${chapter.title}-${item}`,
+                              );
+                              return (
+                                <div
+                                  key={item}
+                                  onClick={() =>
+                                    toggleItem(`${chapter.title}-${item}`)
+                                  }
+                                  className={`flex items-center gap-4 p-4 rounded-2xl border transition-all cursor-pointer group hover:translate-x-1 ${
+                                    isDone
+                                      ? "bg-green-50/50 border-green-200 shadow-sm"
+                                      : "bg-white border-slate-100 hover:border-slate-300 hover:shadow-md"
+                                  }`}
+                                >
+                                  {isDone ? (
+                                    <div className="bg-green-500 rounded-full p-0.5">
+                                      <CheckCircle2
+                                        className="text-white"
+                                        size={20}
+                                      />
+                                    </div>
+                                  ) : (
+                                    <Circle
+                                      className="text-slate-200 group-hover:text-slate-400"
+                                      size={24}
+                                    />
+                                  )}
+                                  <span
+                                    className={`text-sm font-semibold ${isDone ? "text-green-800" : "text-slate-600"}`}
+                                  >
+                                    {item}
+                                  </span>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        <div className="space-y-5">
+                          <h5 className="text-[11px] font-black uppercase text-blue-500 flex items-center gap-2.5">
+                            <Zap size={14} /> Problem Patterns
+                          </h5>
+                          <div className="grid gap-2.5">
+                            {chapter.patterns.map((item) => {
+                              const isDone = completedItems.has(
+                                `${chapter.title}-${item}`,
+                              );
+                              return (
+                                <div
+                                  key={item}
+                                  onClick={() =>
+                                    toggleItem(`${chapter.title}-${item}`)
+                                  }
+                                  className={`flex items-center gap-4 p-4 rounded-2xl border transition-all cursor-pointer group hover:translate-x-1 ${
+                                    isDone
+                                      ? "bg-blue-50 border-blue-200 shadow-sm"
+                                      : "bg-white border-slate-200 border-dashed hover:border-blue-400 hover:border-solid hover:shadow-md"
+                                  }`}
+                                >
+                                  <div
+                                    className={`p-1.5 rounded-lg ${isDone ? "bg-blue-500 text-white" : "bg-slate-50 text-slate-300 group-hover:text-blue-400"}`}
+                                  >
+                                    <Target size={18} />
+                                  </div>
+                                  <span
+                                    className={`text-sm font-bold ${isDone ? "text-blue-800" : "text-slate-700"}`}
+                                  >
+                                    {item}
+                                  </span>
+                                  {isDone && (
+                                    <CheckCircle2
+                                      className="ml-auto text-blue-500"
+                                      size={16}
+                                    />
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+
+                          <div className="mt-8 p-6 bg-slate-900 rounded-3xl text-white relative overflow-hidden">
+                            <h6 className="text-xs font-black uppercase text-blue-400 mb-2">
+                              Practice Resources
+                            </h6>
+                            <p className="text-sm text-slate-300 mb-4">
+                              Practice {chapter.title} with curated problem sets
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              <a
+                                href="https://leetcode.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1.5 text-[10px] font-bold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors border border-white/5"
+                              >
+                                <ExternalLink size={10} /> LeetCode
+                              </a>
+                              <a
+                                href="https://www.geeksforgeeks.org"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1.5 text-[10px] font-bold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors border border-white/5"
+                              >
+                                <ExternalLink size={10} /> GFG
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })
+          ) : (
             <div className="bg-white rounded-[2rem] border p-20 text-center">
               <div className="bg-slate-50 p-6 rounded-full mb-6 inline-block">
                 <Search className="text-slate-300" size={48} />
               </div>
-              <h3 className="text-2xl font-black text-slate-800 mb-2">No results found</h3>
+              <h3 className="text-2xl font-black text-slate-800 mb-2">
+                No results found
+              </h3>
               <p className="text-slate-500">Try searching for something else</p>
             </div>
           )}
@@ -579,11 +697,22 @@ function App() {
         <div className="mt-16 border-t border-slate-200 pt-12 pb-12">
           <div className="bg-gradient-to-br from-slate-800 to-slate-950 p-8 rounded-[2rem] text-white shadow-2xl">
             <h4 className="text-lg font-black mb-3">Ready for Interviews?</h4>
-            <p className="text-sm text-slate-400 mb-6">Complete Level 2 & 3, then tackle Striver's SDE Sheet or Blind 75</p>
-            <a href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems" target="_blank" rel="noopener noreferrer" className="inline-block w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold text-sm transition-all text-center">
+            <p className="text-sm text-slate-400 mb-6">
+              Complete Level 2 & 3, then tackle Striver's SDE Sheet or Blind 75
+            </p>
+            <a
+              href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold text-sm transition-all text-center"
+            >
               View Problem Sets
             </a>
           </div>
+        </div>
+        <div className="text-center mt-10 text-sm text-slate-400">
+          © 2026 Developed by{" "}
+          <span className="font-semibold text-slate-600">Pritam Patil</span>
         </div>
       </div>
     </div>
